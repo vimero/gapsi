@@ -3,15 +3,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.gaspi.store</groupId>
-    <artifactId>microservice-store</artifactId>
+    <groupId>com.gaspi.product</groupId>
+    <artifactId>microservice-product</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>microservice-store</name>
-    <description>Microservice Store</description>
+    <name>microservice-product</name>
+    <description>Microservice Product</description>
 
     <properties>
         <maven.compiler.target>17</maven.compiler.target>
         <maven.compiler.source>17</maven.compiler.source>
+        <dependency.lombok.version>1.18.22</dependency.lombok.version>
     </properties>
 
     <parent>
@@ -48,6 +49,12 @@
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${dependency.lombok.version}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
