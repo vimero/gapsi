@@ -5,14 +5,16 @@ import com.gaspi.product.application.mapper.ProductMapper;
 import com.gaspi.product.application.port.input.PersistenceProductPort;
 import lombok.AllArgsConstructor;
 
+import java.util.List;
+
 @AllArgsConstructor
-public class CreateProductUseCase {
+public class ReadProductUseCase {
 
     private final PersistenceProductPort persistenceProductPort;
     private final ProductMapper productMapper;
 
-    public ProductDTO create(ProductDTO productDTO){
-        return productMapper.toDTO(persistenceProductPort.save(productMapper.toEntity(productDTO)));
+    public List<ProductDTO> read(){
+        return productMapper.toDTOList(persistenceProductPort.read());
     }
 
 }
