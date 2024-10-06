@@ -1,5 +1,7 @@
 package com.gaspi.product.infraestructure;
 
+import com.gaspi.product.application.mapper.ProductMapper;
+import com.gaspi.product.application.port.input.PersistenceProductPort;
 import com.gaspi.product.application.usecase.CreateProductUseCase;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,8 +10,8 @@ import org.springframework.context.annotation.Configuration;
 public class ProductConfiguration {
 
     @Bean
-    CreateProductUseCase createProductUseCase(){
-        return new CreateProductUseCase();
+    CreateProductUseCase createProductUseCase(PersistenceProductPort persistenceProductPort, ProductMapper productMapper){
+        return new CreateProductUseCase(persistenceProductPort, productMapper);
     }
 
 }
