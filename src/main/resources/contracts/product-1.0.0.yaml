@@ -11,7 +11,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   version: 1.0.0
 servers:
-  - url: /api/v1
+  - url: https://us-product-1081097839005.us-central1.run.app/api/v1
 tags:
   - name: product
     description: Everything about your products

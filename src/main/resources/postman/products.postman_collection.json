@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "6682253e-163b-4218-8456-8af14df84b72",
+		"name": "products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2900850"
+	},
+	"item": [
+		{
+			"name": "list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_BASE_URL}}/api/v1/products",
+					"host": [
+						"{{API_BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_BASE_URL}}/api/v1/products/P000000001?description=nueva&model=new model",
+					"host": [
+						"{{API_BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"P000000001"
+					],
+					"query": [
+						{
+							"key": "description",
+							"value": "nueva"
+						},
+						{
+							"key": "model",
+							"value": "new model"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_BASE_URL}}/api/v1/products/P000000001",
+					"host": [
+						"{{API_BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"P000000001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"descc\",\n    \"name\": \"name\",\n    \"model\": \"sdsdsds\",\n    \"price\": 10    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_BASE_URL}}/api/v1/products",
+					"host": [
+						"{{API_BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

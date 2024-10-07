@@ -1,6 +1,10 @@
 # gapsi
 
-#### Deploying a Cloud Run service
+### Postman Collection
+
+  API_BASE_URL: https://us-product-1081097839005.us-central1.run.app
+
+### Deploying a Cloud Run service
 
 1. Set Project Id:
     ```bash
