@@ -3,12 +3,12 @@ package com.gaspi.product.adapter.persistence.mysql.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Data;
-
-import java.util.Date;
 
 @Data
 @Entity
+@Table(name = "product")
 public class ProductEntity {
 
     @Id
@@ -20,10 +20,13 @@ public class ProductEntity {
     @Column(nullable = false, length = 200)
     private String description;
 
-    @Column
+    @Column(nullable = false)
     private double price;
 
     @Column(nullable = false, length = 10)
     private String model;
+
+    @Column(nullable = false)
+    private boolean active;
 
 }

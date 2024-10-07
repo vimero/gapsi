@@ -19,13 +19,14 @@ public class PersistenceProductAdapter implements PersistenceProductPort {
     public ProductEntity save(ProductEntity productEntity) {
         if( productEntity.getId() == null ) {
             productEntity.setId(getCode());
+            productEntity.setActive(true);
         }
         return productRepository.save(productEntity);
     }
 
     @Override
     public List<ProductEntity> read() {
-        return productRepository.findAll();
+        return productRepository.findByActiveTrue();
     }
 
     @Override
@@ -35,7 +36,8 @@ public class PersistenceProductAdapter implements PersistenceProductPort {
 
     @Override
     public void delete(ProductEntity productEntity) {
-        productRepository.delete(productEntity);
+        productEntity.setActive(false);
+        productRepository.save(productEntity);
     }
 
     private String getCode() {
