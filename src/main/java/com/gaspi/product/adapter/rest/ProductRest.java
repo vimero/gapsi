@@ -2,6 +2,7 @@ package com.gaspi.product.adapter.rest;
 
 
 import com.gaspi.product.application.domain.dto.ProductDTO;
+import com.gaspi.product.application.exception.NotFoundException;
 import com.gaspi.product.application.usecase.CreateProductUseCase;
 import com.gaspi.product.application.usecase.DeleteProductUseCase;
 import com.gaspi.product.application.usecase.EditProductUseCase;
@@ -36,12 +37,12 @@ public class ProductRest {
     }
 
     @PutMapping("/{id}")
-    public ProductDTO edit(@PathVariable("id")String id, @RequestParam String description, @RequestParam String model){
+    public ProductDTO edit(@PathVariable("id")String id, @RequestParam String description, @RequestParam String model) throws NotFoundException {
         return editProductUseCase.edit(id, description, model);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable("id")String id){
+    public void delete(@PathVariable("id")String id) throws NotFoundException {
         deleteProductUseCase.delete(id);
     }
 

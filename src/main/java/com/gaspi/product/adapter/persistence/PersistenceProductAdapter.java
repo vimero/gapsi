@@ -2,6 +2,7 @@ package com.gaspi.product.adapter.persistence;
 
 import com.gaspi.product.adapter.persistence.mysql.entity.ProductEntity;
 import com.gaspi.product.adapter.persistence.mysql.repository.ProductRepository;
+import com.gaspi.product.application.exception.NotFoundException;
 import com.gaspi.product.application.port.input.PersistenceProductPort;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -28,8 +29,8 @@ public class PersistenceProductAdapter implements PersistenceProductPort {
     }
 
     @Override
-    public ProductEntity find(String id) {
-        return productRepository.findById(id).orElse(null);
+    public ProductEntity find(String id) throws NotFoundException {
+        return productRepository.findById(id).orElseThrow(() -> new NotFoundException("Product " +id + " not found"));
     }
 
     @Override
